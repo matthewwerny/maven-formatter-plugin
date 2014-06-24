@@ -49,6 +49,7 @@ import org.codehaus.plexus.components.io.fileselectors.FileSelector;
 import org.codehaus.plexus.components.io.fileselectors.IncludeExcludeFileSelector;
 import org.codehaus.plexus.components.io.resources.PlexusIoFileResource;
 import org.codehaus.plexus.components.io.resources.PlexusIoFileResourceCollection;
+import org.codehaus.plexus.components.io.resources.PlexusIoResource;
 import org.codehaus.plexus.util.IOUtil;
 import org.codehaus.plexus.util.ReaderFactory;
 import org.codehaus.plexus.util.StringUtils;
@@ -290,7 +291,7 @@ public class FormatterMojo extends AbstractMojo implements ConfigurationSource {
 	 */
 	void addCollectionFiles(List<File> files) throws IOException {
 		@SuppressWarnings("unchecked")
-		Iterator<PlexusIoFileResource> resources = collection.getResources();
+		Iterator<PlexusIoResource> resources = collection.getResources();
 		while (resources.hasNext()) {
 			PlexusIoFileResource resource = (PlexusIoFileResource) resources
 					.next();
